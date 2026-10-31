@@ -62,6 +62,7 @@ Cloister isn't notarized by Apple (that needs a paid developer account), so macO
 ### 1. Homebrew (recommended)
 
 ```bash
+brew trust arfiarfath21/tap        # once: recent Homebrew only loads casks from trusted taps
 brew install arfiarfath21/tap/cloister
 ```
 
