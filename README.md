@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ArfiArfath21/cloister/releases/latest/download/Cloister.dmg"><img src="docs/download.svg" alt="Download Cloister for macOS" height="64"></a>
+  <a href="#install"><img src="docs/download.svg" alt="Install Cloister on macOS" height="64"></a>
 </p>
 
 <p align="center">
@@ -57,31 +57,42 @@ Cloister is meant to be strict, not dangerous.
 
 ## Install
 
-1. [Download `Cloister.dmg`](https://github.com/ArfiArfath21/cloister/releases/latest/download/Cloister.dmg), open it, and drag **Cloister** onto the **Applications** folder in the window that appears. Then eject the Cloister disk.
-2. Open Cloister from Applications or Launchpad. The first launch needs one extra step, see [Opening Cloister the first time](#opening-cloister-the-first-time) below.
-3. Click **Allow input lock** and switch Cloister on in **System Settings → Privacy & Security → Accessibility**. Begin stays disabled until it's granted, because without it the keyboard can't be locked.
+Cloister isn't notarized by Apple (that needs a paid developer account), so macOS blocks it when it's downloaded through a web browser. The first three options install it without that warning.
 
-### Opening Cloister the first time
-
-Cloister is signed, but not notarized by Apple (that needs a paid Apple Developer account). So the first time you open it, macOS says it *"can't be opened"* or *"cannot verify that it is free of malware"*. Pick one of these; you only have to do it once.
-
-**Option A: Terminal (any macOS version, quickest)**
+### 1. Homebrew (recommended)
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/Cloister.app
+brew install arfiarfath21/tap/cloister
 ```
 
-Then open Cloister normally.
+Update with `brew upgrade cloister`, remove with `brew uninstall --cask cloister`.
 
-**Option B: System Settings (macOS 15 Sequoia and later)**
+### 2. Install script
 
-1. Double-click Cloister and dismiss the warning with **Done**.
-2. Open **System Settings → Privacy & Security** and scroll to the **Security** section.
-3. Next to *"Cloister was blocked to protect your Mac"*, click **Open Anyway**, then confirm with your password or Touch ID.
+```bash
+curl -fsSL https://raw.githubusercontent.com/ArfiArfath21/cloister/main/install.sh | bash
+```
 
-**Option C: Right-click (macOS 14 Sonoma and earlier)**
+Downloads the latest release, copies it to `/Applications` (or `~/Applications` if that isn't writable) and opens it. [Read the script](install.sh) first if you'd like to see what it does.
 
-Right-click (or Control-click) `Cloister.app`, choose **Open**, then click **Open** in the dialog.
+### 3. Build from source
+
+Apps you build yourself open without a warning. See [Build from source](#build-from-source).
+
+### 4. Download the DMG
+
+[Download `Cloister.dmg`](https://github.com/ArfiArfath21/cloister/releases/latest/download/Cloister.dmg), open it, and drag **Cloister** onto the **Applications** folder in the window that appears. Then eject the Cloister disk.
+
+> [!WARNING]
+> Installed this way, macOS refuses to open Cloister the first time, saying it *"can't be opened"* or *"cannot verify that it is free of malware"*. Clear it once with one of these:
+>
+> - **Terminal (any macOS version):** `xattr -d com.apple.quarantine /Applications/Cloister.app`, then open Cloister normally.
+> - **macOS 15 Sequoia and later:** double-click Cloister and dismiss the warning with **Done**. Open **System Settings → Privacy & Security**, scroll to **Security**, click **Open Anyway** next to *"Cloister was blocked to protect your Mac"*, and confirm with your password or Touch ID.
+> - **macOS 14 Sonoma and earlier:** right-click (or Control-click) `Cloister.app`, choose **Open**, then click **Open** in the dialog.
+
+### After installing
+
+Open Cloister, click **Allow input lock**, and switch Cloister on in **System Settings → Privacy & Security → Accessibility**. Begin stays disabled until it's granted, because without it the keyboard can't be locked.
 
 ## Settings
 
