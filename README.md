@@ -13,6 +13,7 @@
   <a href="https://github.com/ArfiArfath21/cloister/releases/latest"><img src="https://img.shields.io/github/v/release/ArfiArfath21/cloister?color=ece4d5&labelColor=0d0d0f" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/macOS-13%2B-ece4d5?labelColor=0d0d0f" alt="macOS 13+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-ece4d5?labelColor=0d0d0f" alt="MIT license"></a>
+  <a href="https://ko-fi.com/arfiarfath21"><img src="https://img.shields.io/badge/support-Ko--fi-ece4d5?labelColor=0d0d0f&logo=kofi&logoColor=ece4d5" alt="Support on Ko-fi"></a>
 </p>
 
 <p align="center">
@@ -128,6 +129,14 @@ swiftc -parse-as-library Sources/Session.swift Sources/Views.swift Sources/Setti
 | [`Views.swift`](Sources/Views.swift) | The SwiftUI start and lock screens |
 | [`SettingsView.swift`](Sources/SettingsView.swift) | The Settings window |
 | [`Session.swift`](Sources/Session.swift) | Session state and stored preferences |
+
+## Support
+
+Cloister is free and open source. If it bought you some focus, you can buy me a coffee.
+
+<p>
+  <a href="https://ko-fi.com/arfiarfath21"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi"></a>
+</p>
 
 ## License
 
