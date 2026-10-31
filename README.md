@@ -16,6 +16,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ArfiArfath21/cloister/releases/latest/download/Cloister.dmg"><img src="docs/download.svg" alt="Download Cloister for macOS" height="64"></a>
+</p>
+
+<p align="center">
   <img src="docs/lock.png" alt="A Cloister session in progress" width="820">
 </p>
 
@@ -52,8 +56,8 @@ Cloister is meant to be strict, not dangerous.
 
 ## Install
 
-1. Download `Cloister.zip` from the [latest release](https://github.com/ArfiArfath21/cloister/releases/latest), unzip it and move `Cloister.app` to **Applications**.
-2. Open it. The first launch needs one extra step, see [Opening Cloister the first time](#opening-cloister-the-first-time) below.
+1. [Download `Cloister.dmg`](https://github.com/ArfiArfath21/cloister/releases/latest/download/Cloister.dmg), open it, and drag **Cloister** onto the **Applications** folder in the window that appears. Then eject the Cloister disk.
+2. Open Cloister from Applications or Launchpad. The first launch needs one extra step, see [Opening Cloister the first time](#opening-cloister-the-first-time) below.
 3. Click **Allow input lock** and switch Cloister on in **System Settings → Privacy & Security → Accessibility**. Begin stays disabled until it's granted, because without it the keyboard can't be locked.
 
 ### Opening Cloister the first time
@@ -102,15 +106,16 @@ Requires Xcode command line tools (Swift 5.9+).
 
 ```bash
 ./build.sh          # build/Cloister.app
-./build.sh --zip    # also packages build/Cloister.zip
+./build.sh --dmg    # also packages build/Cloister.dmg, the drag-to-Applications installer
 ```
 
 Builds are universal (Apple silicon and Intel) and ad-hoc signed. macOS ties the Accessibility grant to the exact build, so after rebuilding, remove the old Cloister entry in the Accessibility list and add the new one.
 
-The icon and README screenshots are generated from code:
+The icon, installer background and README screenshots are generated from code:
 
 ```bash
 swift Tools/make-icon.swift
+swift Tools/make-dmg-art.swift
 swiftc -parse-as-library Sources/Session.swift Sources/Views.swift Sources/SettingsView.swift Tools/render-screens.swift -o build/render && build/render
 ```
 
